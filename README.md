@@ -26,7 +26,6 @@ It is designed to provide an example of how to configure NFS server-client archi
 │   └── hosts
 ├── roles
 │   ├── nfsclient
-│   │   ├── README.md
 │   │   ├── defaults
 │   │   │   └── main.yml
 │   │   ├── handlers
@@ -37,7 +36,6 @@ It is designed to provide an example of how to configure NFS server-client archi
 │   │       ├── nfs-automount.j2
 │   │       └── nfs-mount.j2
 │   └── nfsserver
-│       ├── README.md
 │       ├── defaults
 │       │   └── main.yml
 │       ├── handlers
