@@ -1,0 +1,17 @@
+- name: Install NFS server packages
+  yum:
+    name:
+      - nfs-utils
+    state: present
+
+- name: Create NFS directory
+  file:
+    path: "{{ nfs_export_dir }}"
+    state: directory
+    mode: '0777'
+
+- name: Set up NFS exports file
+  template:
+    src: exports.j2
+    dest: /etc/exports
+  notify: restart nfs-server

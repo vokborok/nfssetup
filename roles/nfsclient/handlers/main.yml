@@ -1,0 +1,11 @@
+---
+# handlers file for nfsclient
+- name: reload systemd
+  systemd:
+    daemon_reload: yes
+
+- name: enable nfs automount
+  systemd:
+    name: "{{ nfs_mount | regex_replace('/', '-') }}.automount"
+    enabled: yes
+    state: started

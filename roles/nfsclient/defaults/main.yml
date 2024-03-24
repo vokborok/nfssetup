@@ -1,0 +1,5 @@
+---
+# defaults file for nfsclient
+nfs_server: '172.31.36.73'
+nfs_share: 'var/nfs'
+nfs_mount: 'mnt/nfs'

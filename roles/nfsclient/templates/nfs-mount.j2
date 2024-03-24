@@ -1,0 +1,11 @@
+[Unit]
+Description=Mount NFS Share
+
+[Mount]
+What={{ nfs_server }}:{{ '/' + nfs_share }}
+Where={{ '/' + nfs_mount }}
+Type=nfs
+Options=defaults
+
+[Install]
+WantedBy=multi-user.target
