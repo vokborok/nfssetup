@@ -1,9 +1,0 @@
-- hosts: nfsserver
-  become: yes
-  roles:
-    - nfsserver
-      
-- hosts: nfsclient
-  become: yes
-  roles:
-    - nfsclient
