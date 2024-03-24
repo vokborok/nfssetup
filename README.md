@@ -6,6 +6,10 @@ It is designed to provide an example of how to configure NFS server-client archi
 ## Prerequisites and Limitations
 ### Control Node
 + **Ansible Version**: Ensure that Ansible version 2.9 or higher is installed on the control node for proper playbook execution.
++ set env:
+  ```
+  export ANSIBLE_HOST_KEY_CHECKING=False
+  ```
 ### Environment
 + **Cloud-Based Nodes**: Both NFS server and client nodes are hosted in the cloud. These nodes will be available for demonstration and testing purposes until April 07, 2024.
 
