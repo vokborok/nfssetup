@@ -15,12 +15,34 @@ It is designed to provide an example of how to configure NFS server-client archi
 ## Repository Structure
 ```
 .
+├── README.md
+├── group_vars
+├── host_vars
+├── inventory
+│   └── hosts
 ├── roles
-│   ├── nfs_client
-│   └── nfs_server
-├── playbooks
-│   ├── nfs_client.yml
-│   └── setup_nfs_server.yml
+│   ├── nfsclient
+│   │   ├── README.md
+│   │   ├── defaults
+│   │   │   └── main.yml
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   ├── tasks
+│   │   │   └── main.yml
+│   │   └── templates
+│   │       ├── nfs-automount.j2
+│   │       └── nfs-mount.j2
+│   └── nfsserver
+│       ├── README.md
+│       ├── defaults
+│       │   └── main.yml
+│       ├── handlers
+│       │   └── main.yml
+│       ├── tasks
+│       │   └── main.yml
+│       └── templates
+│           └── exports.j2
+├── setup-nfs.yml
 └── vaulted_vars
     └── vars.yml
 ```
@@ -32,6 +54,6 @@ cd nfssetup
 ```
 Run:
 ```
-ansible-playbook -e @vaulted_vars/vars.yml -i inventory/hosts playbook.yml --ask-vault-pass
+ansible-playbook -e @vaulted_vars/vars.yml -i inventory/hosts setup-nfs.yml --ask-vault-pass
 ```
 vault-pass will be sent separately through a secure method
